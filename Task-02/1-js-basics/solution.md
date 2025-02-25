@@ -163,4 +163,82 @@ In a **shopping cart system**, JavaScript data types help in handling different 
 | **BigInt**    | Store large numerical values like order IDs       |
 | **Symbol**    | Ensure unique product identifiers                 |
 
-By using **these data types appropriately**, we can build a **efficient** shopping cart system in JavaScript! 🚀
+By using **these data types appropriately**, we can build a **efficient** shopping cart system in JavaScript! 
+
+## Second Assignment: JavaScript Functions
+
+### 1. Function That Returns a Value
+```javascript
+function calculateTotal(price, quantity) {
+    return price * quantity; // This returns the total cost
+}
+
+let total = calculateTotal(100, 2);
+console.log("Total Price:", total); // Output: Total Price: 200
+```
+
+### 2. Function That Doesn't Return Anything
+This function performs an action but doesn't return a value:
+```javascript
+function displayMessage(message) {
+    console.log("Message:", message);
+}
+
+displayMessage("Welcome to our store!"); // Output: Message: Welcome to our store!
+```
+
+### 3. Function with a Mix of Parameters and Default Values
+```javascript
+function placeOrder(product, quantity = 1, discount = 0) {
+    let pricePerItem = 500; // Assuming the price per item is 500
+    let total = (pricePerItem * quantity) - discount;
+    console.log(`Order placed for ${quantity} ${product}(s). Total: ₹${total}`);
+}
+
+placeOrder("Laptop"); // Uses default values (quantity=1, discount=0)
+placeOrder("Headphones", 2); // Uses default discount (₹0)
+placeOrder("Smartphone", 3, 500); // Custom quantity and discount
+```
+
+---
+
+## Third Assignment: If-Else Statement
+
+```javascript
+let allStudents = ['A', 'B-', 1, 4, 5, 2]; // Grades taken from the given assignment 
+let studentsPassed = []; // This stores the passing students
+
+for (let i = 0; i < allStudents.length; i++) {
+    let grade = allStudents[i];
+
+    if (grade === 'A') {
+        studentsPassed.push(grade);
+    } else if (grade === 'A-') {
+        studentsPassed.push(grade);
+    } else if (grade === 'B') {
+        studentsPassed.push(grade);
+    } else if (grade === 'B-') {
+        studentsPassed.push(grade);
+    } else if (grade === 'C') {
+        studentsPassed.push(grade);
+    } else if (grade === 'C-') {
+        studentsPassed.push(grade);
+    } else if (grade >= 3) { 
+        studentsPassed.push(grade);
+    }
+}
+
+console.log(studentsPassed); // Output: ['A', 'B-', 4, 5]
+```
+
+---
+
+## Fourth Assignment: Looping Every 3rd Number Between 1-20
+
+```javascript
+for (let i = 1; i <= 20; i += 3) {
+    console.log(i);
+} // This prints every 3rd number from 1 to 20
+```
+
+
