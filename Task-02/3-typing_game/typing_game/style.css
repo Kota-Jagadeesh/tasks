@@ -1,0 +1,96 @@
+/* General Styling */
+body {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  padding: 20px;
+}
+
+/* Heading */
+h1 {
+  font-size: 50px;
+  color: #ffeb3b;
+}
+
+/* Quote Text */
+p {
+  font-size: 24px;
+}
+
+/* Quote Highlight */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+/* Error Highlight */
+.error {
+  background-color: red;
+  color: white;
+}
+
+/* Input & Button Styling */
+input {
+  font-size: 20px;
+  padding: 10px;
+  width: 300px;
+  border: 3px solid #ffeb3b;
+  border-radius: 10px;
+  text-align: center;
+}
+
+button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e65100;
+}
+
+/* High Score Display */
+#high-score {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: black;
+  z-index: 1000;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+#close-modal {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#close-modal:hover {
+  background-color: #388E3C;
+}

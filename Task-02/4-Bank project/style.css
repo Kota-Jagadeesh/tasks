@@ -1,0 +1,89 @@
+/* General Page Style */
+body {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #2196F3, #64B5F6);
+  color: #333;
+}
+
+/* Main Container */
+section {
+  background: white;
+  padding: 20px;
+  width: 550px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Headings */
+h1 {
+  color: white;
+  font-size: 24px;
+}
+
+h2 {
+  color: #007BFF;
+  font-size: 20px;
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Labels */
+label {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Inputs */
+input {
+  padding: 5px;
+  height: 30px;
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Buttons */
+button {
+  padding: 12px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  font-size: 16px;
+  height: 40px;
+  width: 50%;
+  margin: 10px auto;
+}
+
+button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+a:hover {
+  text-decoration: underline;
+}

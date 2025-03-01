@@ -1,0 +1,82 @@
+/* General Styles */
+body {
+    background-color: #0f0f0f;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+
+header {
+    background: linear-gradient(90deg, #ff0080, #8000ff);
+    padding: 15px;
+    
+}
+.welcome {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+}
+
+/*this contains the profile section */
+.profile {
+    margin: 30px auto; /* here as this property is shorthanded to top-bottom and left-right */
+    max-width: 1000px;
+    padding: 50px;
+    border-radius: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 20px #ee02021a; /*horiz vertical offset blurradius */ 
+}
+.profile-pic {
+    display: block;
+    margin: 0 auto 15px; /* top right-left bottom */
+    width: 150px;
+    height: 150px;
+    border-radius: 0%;
+    border: 3px solid #fff;
+}
+
+/* Sections */
+.details, .education {
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
+.details h2, .education h2 {
+    color: #ffcc00;
+}
+.details ul, .education ul {
+    list-style-type: none;
+    padding: 0;
+}
+.details li, .education li {
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+/* Social Media Section */
+.social-media {
+    margin: 30px auto;
+    padding: 20px;
+}
+.social-links {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    gap: 15px;
+}
+.btn {
+    background: #ff0080;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: 0.1s ;
+}
+.btn:hover {
+    background: #8000ff;
+    transform: scale(2);
+}
+

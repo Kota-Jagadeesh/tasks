@@ -6,7 +6,7 @@ I came to know about many Git commands and their usage after performing the task
 The exercise was simple; it just meant to start the task by performing a simple command:
 
 ```sh
-git start master
+git start 
 ```
 
 There is nothing much to tell about this exercise.
@@ -32,7 +32,7 @@ git start commit-one-file-staged
 Here, I first used:
 
 ```sh
-git reset HEAD
+git reset 
 ```
 
 This command is used in Git to unstage changes that have been added to the staging area but not committed. After this, I committed a file named `A.txt` using:
@@ -54,6 +54,7 @@ This task was about `.gitignore`, which tells Git which files or directories to 
 
 ```sh
 nano .gitignore
+
 ```
 
 Then, I committed the changes:
