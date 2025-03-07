@@ -20,7 +20,7 @@ header {
 
 /*this contains the profile section */
 .profile {
-    margin: 30px auto; /* here as this property is shorthanded to top-bottom and left-right */
+    margin: 30px auto; /* here this property is shorthanded to top-bottom and left-right */
     max-width: 1000px;
     padding: 50px;
     border-radius: 60px;

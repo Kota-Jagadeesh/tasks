@@ -21,7 +21,7 @@ function dragElement(terrariumElement) {
     function pointerDrag(e) {
         e.preventDefault();
         console.log(e);
-        pos3 = e.clientX;  // Fixed typo
+        pos3 = e.clientX;  
         pos4 = e.clientY;
         document.onpointermove = elementDrag;
         document.onpointerup = stopElementDrag;
@@ -34,7 +34,7 @@ function dragElement(terrariumElement) {
         pos4 = e.clientY;
         console.log(pos1, pos2, pos3, pos4);
         
-        terrariumElement.style.top = (terrariumElement.offsetTop - pos2) + 'px';  // Fixed 'pX' to 'px'
+        terrariumElement.style.top = (terrariumElement.offsetTop - pos2) + 'px';  
         terrariumElement.style.left = (terrariumElement.offsetLeft - pos1) + 'px';
     }
 
@@ -48,16 +48,16 @@ function maximise(element) {
     if (element.dataset.state === "0" || !element.dataset.state) {
         element.style.transform = "scale(3)";
         element.style.transition = "transform 0.25s ease";
-        element.dataset.state = "1";  // Store state in dataset
+        element.dataset.state = "1";  // stores the state in dataset
     } else {
         element.style.transform = "scale(1)";
-        element.style.transition = "transform 0.25s ease";  // Fixed 'tranform' typo
+        element.style.transition = "transform 0.25s ease";  
         element.dataset.state = "0";
     }
 }
 
-// Fixing the reset button event listener
+// this is a reset button
 const a = document.getElementById("reset");
 a.addEventListener("click", function() {
-    location.reload();  // Refreshes the page
+    location.reload();  // this refreshes the entire web page 
 });

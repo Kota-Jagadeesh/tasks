@@ -43,8 +43,8 @@ h1 {
 }
 #terrarium {
     display: flex;
-    flex-direction: column; /* Stack elements in a column */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column; /* for stacking elements in a column */
+    align-items: center; /* centers items horizontally */
     width: 700px;
     height: 600px;
     background-color: #0a9a84;
@@ -80,7 +80,7 @@ h1 {
     width: 3%;
     background: #ffffff;
     border-radius: 10px;
-    align-self: flex-start; /* Align to the left side */
+    align-self: flex-start; /* align to the left side */
 	margin-left: 5%;
 }
 
