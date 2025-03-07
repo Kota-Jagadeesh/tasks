@@ -1,0 +1,118 @@
+/* <h1 style="color: red">My Terrarium</h1> */
+h1 {
+    color:blue;
+}
+body {
+	font-family: helvetica, arial, sans-serif;
+    background-color: #0a9a84;}
+h1 {
+	color: #3a241d;
+	text-align: center;
+}
+#left-container {
+	background-color: #000000;
+	width: 15%;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	height: 100%;
+	padding: 10px;
+	
+}
+
+#right-container {
+	background-color: #000000;
+	width: 15%;
+	right: 0px;
+	top: 0px;
+	position: absolute;
+	height: 100%;
+	padding: 10px;
+}
+.plant-holder {
+	position: relative;
+	height: 13%;
+	left: -10px;
+}
+
+.plant {
+	position: relative;
+	max-width: 150%;
+	max-height: 150%;
+	z-index: 2;
+}
+#terrarium {
+    display: flex;
+    flex-direction: column; /* to stack elements in a column */
+    align-items: center; /* centers items horizontally */
+    width: 700px;
+    height: 600px;
+    background-color: #0a9a84;
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+	margin-left: 25%;
+}
+
+/* Jar Top */
+.jar-top {
+    width: 80%;
+    height: 5%;
+    background: #ffffff;
+    opacity: 0.7;
+}
+
+/* Jar Walls */
+.jar-walls {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    position: relative;
+    height: 80%;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 1rem 1rem 0 0;
+    opacity: 0.5;
+}
+
+.jar-glossy-long,
+.jar-glossy-short {
+    width: 3%;
+    background: #ffffff;
+    border-radius: 10px;
+    align-self: flex-start; /* aligns to the left side */
+	margin-left: 5%;
+}
+
+.jar-glossy-long {
+    height: 15%;
+    margin-top: 20%;
+}
+
+.jar-glossy-short {
+    height: 10%;
+    margin-top: 5%;
+}
+
+/* Dirt */
+.dirt {
+    width: 100%;
+    height: 5%;
+    background: #650e72;
+    border-radius: 10% 10% 20rem 20rem;
+    opacity: 0.7;
+
+}
+
+/* Jar Bottom */
+.jar-bottom {
+    width: 80%;
+    height: 1%;
+    background: #e00782;
+    opacity: 0.7;
+}
+
+/* .reset {
+	color: black;
+	display: flex;
+} */
