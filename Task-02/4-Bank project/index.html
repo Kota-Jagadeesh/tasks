@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h1 id="bankname">404 FUNDS 😆</h1>
+    <!-- <h1 id="bankname">Paython Bank 😆</h1> -->
+    <div id="app">Loading...</div>
+
+    <!-- LOGIN TEMPLATE -->
+    <template id="login">
+        <section>
+            <h2>Login</h2>
+            <form id="loginForm" action="javascript:login()">
+                <label for="username">Username</label>
+                <input id="username" name="user" type="text" required>
+                <div id="loginError" role="alert"></div>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <hr/>
+
+        <h2>Register</h2>
+        <form id="registerForm" action="javascript:register()">
+            <label for="user">Username (required)</label>
+            <input id="user" name="user" type="text" maxlength="20" required>
+            
+            <label for="currency">Currency (required)</label>
+            <input id="currency" name="currency" type="text" value="$" maxlength="5" required>
+            
+            <label for="description">Description</label>
+            <input id="description" name="description" type="text" maxlength="100">
+            
+            <label for="balance">Current Balance</label>
+            <input id="balance" name="balance" type="number" value="0">
+            
+            <div id="registerError" role="alert"></div>
+            <button type="submit">Register</button>
+        </form>
+    </template>
+
+    <!-- DASHBOARD TEMPLATE -->
+    <template id="dashboard">
+        <header>
+            <h1>Bank App</h1>
+            <a href="/login" onclick="onLinkClick(event)">Logout</a>
+        </header>
+
+        <section id="balanced">
+            Balance: <span id="balance"></span><span id="currency"></span>
+        </section>
+        <h2 id="description"></h2>
+
+        <div id="addTransactionForm" class="modal">
+            <div class="modal-content">
+                <h2>Add Transaction</h2>
+                <form id="transactionForm">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                    
+                    <label for="object">Object:</label>
+                    <input type="text" id="object" name="object" required>
+                    
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" name="amount" required>
+                    
+                    <button type="submit">Add Transaction</button>
+                    <button type="button" onclick="closeTransactionForm()">Cancel</button>
+                </form>
+            </div>
+        </div>
+        
+
+        <section>
+            <h2>Transactions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Object</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="transactions"></tbody>
+            </table>
+        </section>
+        <!-- adding transaction form -->
+
+<button id="addingtransaction" onclick="openTransactionForm()">Add Transaction</button>
+
+    </template>
+
+    <!-- TRANSACTION TEMPLATE -->
+    <template id="transaction">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </template>

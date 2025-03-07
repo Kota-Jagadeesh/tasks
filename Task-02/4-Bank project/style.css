@@ -1,0 +1,139 @@
+/* normal styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  text-align: center;
+}
+
+h1, h2 {          /* used this styling for headings */
+  color: #2cd5c9;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* for centering the app container */
+#app {
+  max-width: 500px;
+  margin: 90px auto;
+  padding: 20px;
+  background: rgb(0, 0, 0);
+  border-radius: 10px;
+  box-shadow: 10 10 10px rgba(0, 0, 0, 0.1);
+}
+
+/* stying for the forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+input, button {    /* this styles the input boxes */
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 5px solid #c9d8677e;
+}
+
+input:focus {          /* when we click on input this causes the effect */ 
+  outline: none;
+  border-color: #2b96a9;
+  box-shadow: 5px 5px 5px rgba(185, 19, 19, 0.5);    
+}
+
+button {
+  background: #d726d7;
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* for error Messages */
+#loginError, #registerError, #transactionError {
+  color: red;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+/* dashboard styling */ */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 200px;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;         /* for logout link  type nutton */
+}
+
+a:hover {        /* addding decoration for the logout */
+  text-decoration: underline;
+}
+
+/* transactions Table */
+table {     
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: rgb(255, 255, 255);   /* white color background on table transactions */
+}
+
+table, th, td {
+  border: 1px solid #ccec29;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #fd7507;   /* headings of the transactions table */
+  color: rgb(0, 0, 0);
+}
+
+/* Modal Styles for Add Transaction */
+.modal {
+  display: none;
+  position: fixed;   /* no popup without this */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal button {
+  margin-top: 10px;
+}
+label {
+  color: #ccec29;
+}
+#bankname {
+  color: #333;
+}
+#balanced {
+  color:#ccec29;
+  margin-top: 5% ;
+}
+#addingtransaction {    /* for proper spacing */
+  margin-top: 5%;
+}
