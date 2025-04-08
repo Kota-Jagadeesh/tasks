@@ -1,0 +1,36 @@
+.contactContainer {
+    margin-top: 100px;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+  }
+  
+  .infoBox {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .infoBox p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .infoBox a {
+    color: #0070f3;
+    text-decoration: none;
+  }
+  
+  .infoBox a:hover {
+    text-decoration: underline;
+  }
+  
