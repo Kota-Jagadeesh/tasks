@@ -1,22 +1,22 @@
 #include <stdio.h> 
-#include <stdlib.h>  // used for exit() , getenv()
+#include <stdlib.h>  // used for exit() 
 #include <string.h>  // for string operations strcmp() , strtok()
 #include <unistd.h>  // for chdir() , getcwd() , fork , execvp
 #include <sys/types.h> 
-#include <sys/wait.h> // used for 
+#include <sys/wait.h>  
  
-#define MAX_INPUT 1024  // this is a max input size 
-#define MAX_ARGS 100  // these are max arguments for a command
+#define MAX_INPUT 1024  
+#define MAX_ARGS 100  
 
 void read_input(char *input) {
     char cwd[1024]; 
-	// thiss gets the current working directory
+
     getcwd(cwd, sizeof(cwd));
-	// displays the prompt with directory 
+
     printf("%s> ", cwd);
-	// this reads the input from user using fgets
+
     fgets(input, MAX_INPUT, stdin);
-	// removes the newline char
+
     input[strcspn(input, "\n")] = '\0';
 }
 // parsing the user input 
@@ -29,8 +29,7 @@ void parse_input(char *input, char **args) {
         token = strtok(NULL, " ");
     }
     args[i] = NULL; // 
-	// example : ls -l /home
-	// args[0]="ls",args[1]="-l",args[2]="/home"
+	
 }
 // here we  handle the built in functions 
 int execute_builtin(char **args) {
