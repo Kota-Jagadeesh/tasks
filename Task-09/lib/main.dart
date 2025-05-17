@@ -16,7 +16,7 @@ class PokedexApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         primarySwatch: Colors.cyan,
-        scaffoldBackgroundColor: const Color.fromARGB(255, 0, 0, 0),
+        scaffoldBackgroundColor: Colors.black,
         textTheme: const TextTheme(
           headlineMedium: TextStyle(
             fontFamily: 'Roboto',
@@ -32,7 +32,7 @@ class PokedexApp extends StatelessWidget {
         ),
         iconTheme: const IconThemeData(color: Colors.cyan),
       ),
-      home: const LoginPage(), // updated to start with LoginPage
+      home: const LoginPage(),
     );
   }
 }

@@ -3,9 +3,13 @@ import '../models/pokemon.dart';
 import '../services/api_service.dart';
 import 'pokemon_detail_page.dart';
 import 'login_page.dart';
+import 'captured.dart';
+import 'traded.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final int userId;
+
+  const HomePage({super.key, required this.userId});
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -57,25 +61,18 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void _logout() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => const LoginPage()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.cyan,
-            size: 28,
-          ),
-          tooltip: 'Back to Login',
-          onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => const LoginPage()),
-            );
-          },
-        ),
         title: const Text(
           'Pok-Codéx',
           style: TextStyle(
@@ -85,6 +82,13 @@ class _HomePageState extends State<HomePage> {
             color: Color.fromARGB(255, 255, 217, 0),
           ),
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout, color: Colors.cyan, size: 28),
+            tooltip: 'Logout',
+            onPressed: _logout,
+          ),
+        ],
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         elevation: 0,
@@ -100,7 +104,6 @@ class _HomePageState extends State<HomePage> {
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 hintText: 'Search Pokémon...',
-                hintStyle: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                 prefixIcon: const Icon(Icons.search, color: Colors.redAccent),
                 filled: true,
                 fillColor: const Color.fromARGB(255, 158, 158, 158),
@@ -110,18 +113,66 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
-            // Pokémon Collection Header
+            const SizedBox(height: 10),
+            // Button to view captured Pokémon
             Center(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          CapturedPokemonPage(userId: widget.userId),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.cyan,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                ),
                 child: const Text(
-                  'Pokémons: .... ',
+                  'View Captured Pokémon',
                   style: TextStyle(
                     fontFamily: 'Roboto',
-                    fontSize: 24,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 247, 0, 255),
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            // Button to view traded Pokémon
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          TradedPokemonPage(userId: widget.userId),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                ),
+                child: const Text(
+                  'View Traded Pokémon',
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -191,6 +242,7 @@ class _HomePageState extends State<HomePage> {
                                               builder: (context) =>
                                                   PokemonDetailPage(
                                                 pokemon: snapshot.data!,
+                                                userId: widget.userId,
                                               ),
                                             ),
                                           );
@@ -221,7 +273,7 @@ class _HomePageState extends State<HomePage> {
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.bold,
                                                 color: Color.fromARGB(
-                                                    255, 230, 255, 88),
+                                                    255, 255, 255, 255),
                                               ),
                                               textAlign: TextAlign.center,
                                             ),

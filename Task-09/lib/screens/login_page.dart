@@ -1,4 +1,3 @@
-// lib/screens/login_page.dart
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -25,10 +24,9 @@ class _LoginPageState extends State<LoginPage> {
     });
 
     try {
-      // Use 127.0.0.1 instead of localhost
       final response = await http
           .post(
-        Uri.parse('http://127.0.0.1:5000/login'), // Updated to 127.0.0.1
+        Uri.parse('http://127.0.0.1:5000/login'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           'email': _emailController.text,
@@ -43,9 +41,10 @@ class _LoginPageState extends State<LoginPage> {
       final data = jsonDecode(response.body);
 
       if (response.statusCode == 200) {
+        final userId = data['user_id'];
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const HomePage()),
+          MaterialPageRoute(builder: (context) => HomePage(userId: userId)),
         );
       } else {
         setState(() {
@@ -102,9 +101,11 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 20),
               TextFormField(
                 controller: _emailController,
+                maxLength: 10,
                 decoration: InputDecoration(
                   labelText: 'Email',
-                  labelStyle: const TextStyle(color: Colors.grey),
+                  labelStyle:
+                      const TextStyle(color: Color.fromARGB(255, 0, 162, 255)),
                   filled: true,
                   fillColor: Colors.grey[900],
                   border: OutlineInputBorder(
@@ -118,9 +119,11 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 16),
               TextFormField(
                 controller: _passwordController,
+                maxLength: 10,
                 decoration: InputDecoration(
                   labelText: 'Password',
-                  labelStyle: const TextStyle(color: Colors.grey),
+                  labelStyle:
+                      const TextStyle(color: Color.fromARGB(255, 0, 162, 255)),
                   filled: true,
                   fillColor: Colors.grey[900],
                   border: OutlineInputBorder(

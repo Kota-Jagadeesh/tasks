@@ -1,4 +1,3 @@
-// lib/screens/register_page.dart
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -25,10 +24,9 @@ class _RegisterPageState extends State<RegisterPage> {
     });
 
     try {
-      // Use 127.0.0.1 instead of localhost
       final response = await http
           .post(
-        Uri.parse('http://127.0.0.1:5000/register'), // Updated to 127.0.0.1
+        Uri.parse('http://127.0.0.1:5000/register'),
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           'username': _usernameController.text,
@@ -44,6 +42,14 @@ class _RegisterPageState extends State<RegisterPage> {
       final data = jsonDecode(response.body);
 
       if (response.statusCode == 201) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Registration successful! Please login.'),
+            backgroundColor: Colors.green,
+          ),
+        );
+        await Future.delayed(const Duration(
+            seconds: 1)); // brief delay for user to see the message
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => const LoginPage()),
@@ -104,9 +110,11 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(height: 20),
               TextFormField(
                 controller: _usernameController,
+                maxLength: 10,
                 decoration: InputDecoration(
                   labelText: 'Username',
-                  labelStyle: const TextStyle(color: Colors.grey),
+                  labelStyle:
+                      const TextStyle(color: Color.fromARGB(255, 0, 162, 255)),
                   filled: true,
                   fillColor: Colors.grey[900],
                   border: OutlineInputBorder(
@@ -119,9 +127,11 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(height: 16),
               TextFormField(
                 controller: _emailController,
+                maxLength: 10,
                 decoration: InputDecoration(
                   labelText: 'Email',
-                  labelStyle: const TextStyle(color: Colors.grey),
+                  labelStyle:
+                      const TextStyle(color: Color.fromARGB(255, 0, 162, 255)),
                   filled: true,
                   fillColor: Colors.grey[900],
                   border: OutlineInputBorder(
@@ -135,9 +145,11 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(height: 16),
               TextFormField(
                 controller: _passwordController,
+                maxLength: 10,
                 decoration: InputDecoration(
                   labelText: 'Password',
-                  labelStyle: const TextStyle(color: Colors.grey),
+                  labelStyle:
+                      const TextStyle(color: Color.fromARGB(255, 0, 162, 255)),
                   filled: true,
                   fillColor: Colors.grey[900],
                   border: OutlineInputBorder(
