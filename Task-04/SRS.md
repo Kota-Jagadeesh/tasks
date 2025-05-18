@@ -1,61 +1,71 @@
-# 📄 SRS Document
+# Software Requirements Specification (SRS) Document
 
 ---
 
-### Firstly, SRS means `Software Requirements Specification` — it is a document that contains a clear description of what our software project aims to achieve. This includes things like key features, user needs and some basic guidelines to help all the devolopers get on the same page.
+## Project Overview
+
+This letterboxd project aims to develop a movie discovery and tracking web app inspired by Letterboxd. the web application is built using React and Next.js on the frontend, and Flask on the backend, this platform will enable the users to browsee movies, rate and, maintain personalized watchlists, and can engage with other users through profiles and following functionality.
 
 ---
 
-## 🎯 Aim :
+## Objectives
 
-- The main aim of this project is to build a Letterboxd-style website using React and Next.js. It is a platform where users can discover new movies, rate them and even track what they've already watched. Also users can create their own profile and follow others too.
+- Provide users with a good interface to discover, rate, and track movies.
+- Enable user account creation, authentication, and profile management.
+- Support social interactions such as following other users and viewing their activities.
+- Deliver a responsive and performant user experience covering modern web technologies.
 
 ---
 
-## 🔑 Key Features :
-
-The following are the core features included in this website :
+## Functional Requirements
 
 1. **User Authentication**  
-   - We will have login and register pages so that users can create an account and signin into the website.
+   - Registration and login system allowing account access.
 
-2. **Movie Viewing**  
-   - Users can view the list of movies available in the site, with full details like poster, discription, release year and more.
+2. **Movie Browsing**  
+   - Display movie details, including posters, descriptions, and release years.
 
-3. **Movie Rating**  
-   - Each user can rate a movie from 1 to 5 stars and also  These will be visible to other users too.
+3. **Rating System**  
+   - Allow users to rate movies on a 1 to 5-star scale, with ratings visible to all users.
 
 4. **Search Functionality**  
-   - A simple search bar to find movies by title. This helps in quickly finding what ur looking for.
+   - Implement search by movie title to facilitates the quick content discovery.
 
-5. **WatchList**  
-   - Users can add movies into a personal Watchlist to keep track of what they want to watch later.
+5. **Watchlist Management**  
+   - Users can add or remove movies from their personal watchlist.
 
-6. **User Profile & Update**  
-   - Each user has a profile where they can see their activity, update details like name and profile, and even view their own reviews and watchlist.
+6. **User Profiles**  
+   - Profiles display user information, reviews, watchlists, and recent activity.  
+   - Users can update profile details such as name and avatar.
 
-7. **About Page**  
-   - A simple static page that tells what this site is about and how it is inspired from Letterboxd.
+7. **Static Pages**  
+   - “About” page describing the letterboxd-clone purpose and inspiration.  
+   - “Contact Us” page fcontains the details of Me and have an email to mail me.
 
-8. **Contact Us Page**  
-   - A page where users can contact us . Basic form with email and message.
-
-9. **Social Features**  
-   - Users can follow/unfollow other users, view their profiles, and check out what movies they’ve rated or reviewed recently.
-
----
-
-## 🛠️ Tools & Tech Stack :
-
-- **Frontend** : React.js with Next.js
-- **Styling** : Custom CSS Modules
-- **Backend** : Flask 
-- **Database** : json
-- **Design Tool** : Figma for wireframes and UI
+8. **Social Features**  
+   - Follow/unfollow other users and view their movie-related activities.
 
 ---
 
-## 📌 Conclusion :
+## Non-Functional Requirements
 
-This SRS documment outlines the basic vision and features of our Letterboxd-like website. As we develop further, we might add more features or update the existing ones depending on the feedback and requirement.
+- Responsive UI compatible with the major browsers and devices.
+- Secure authentication and data handling.
+- Fast load times and smooth navigation.
+---
 
+## Technology Stack
+
+- **Frontend:** React.js with Next.js  
+- **Backend:** Flask  
+- **Styling:** CSS Modules  
+- **Database:** JSON 
+- **Design:** Figma (wireframes and UI design)
+
+---
+
+## Future Considerations
+
+This document represents the initial scope and features. Further enhancements and updates for the project will be devoloped based on the users feedback.
+
+---
