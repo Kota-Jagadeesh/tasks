@@ -1,1 +1,1 @@
-# amfoss-curriculum
+: ) 
